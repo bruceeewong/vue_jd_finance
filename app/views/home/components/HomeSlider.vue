@@ -2,7 +2,7 @@
   <article>
     <!-- 首页swiper -->
     <v-slider 
-      :slideItems="slideItems"
+      :slide-items="slideItems"
       :cname="$style.slider"
     ></v-slider>
     <!-- 首页swiper -->
