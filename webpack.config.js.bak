@@ -25,9 +25,9 @@ module.exports = env => {
   }
   return {
     // entry: {
-    //   app: './app/main.js'
+    //   app: './src/main.js'
     // },
-    entry: ['./app/js/lib/viewport.js', './app/main.js'],
+    entry: ['./src/lib/viewport.js', './src/main.js'],
     devServer: {
       contentBase: './dist',
       hot: true,

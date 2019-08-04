@@ -5,31 +5,35 @@
       :not-next-tick="options.notNextTick"
     >
       <swiper-slide
-        v-for="item in items"
+        v-for="item in slideItems"
         :key="item.href"
       >
         <router-link :to="{ name: item.href }">
-          <img :src="item.src" alt="">
+          <img :src="item.src" alt="swiper-img">
         </router-link>
-        <div
-          v-if="options.pagination"
-          class="swiper-pagination"
-          slot="pagination"
-        ></div>
       </swiper-slide>
+      <div 
+        class="swiper-pagination"
+        v-if="options.pagination"
+        slot="pagination"
+      ></div>
     </swiper>
   </section>
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 export default {
-  name: 'slider',
+  name: 'v-slider',
+  components: {
+    swiper,
+    swiperSlide,
+  },
   props: {
     cname: {
       type: String,
-      default: ''
+      default: '',
     },
     options: {
       type: Object,
@@ -38,32 +42,28 @@ export default {
           autoplay: true,
           loop: true,
           pagination: {
-            el: '.swiper-pagination'
+            el: '.swiper-pagination',
           },
-          notNextTick: false
-        }
-      }
+          notNextTick: false,
+        };
+      },
     },
-    items: {
+    slideItems: {
       type: Array,
       default () {
         return [
-          {
-            href: '',
-            src: ''
-          }
-        ]
-      }
-    }
+          // {
+          //   href: '',
+          //   src: '',
+          // } 
+        ];
+      },
+    },
   },
-  components: {
-    swiper,
-    swiperSlide
-  }
-}
+};
 </script>
 
 <style lang="scss">
-@import '~swiper/dist/css/swiper.css';
+@import "~swiper/dist/css/swiper.css";
 
 </style>

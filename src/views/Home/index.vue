@@ -1,13 +1,21 @@
 <template>
   <div>
-    <h1>Home</h1>
+    <v-header></v-header>
+    <h-slider></h-slider>
   </div>
 </template>
 
 <script>
+import VHeader from "../../layout/VHeader.vue";
+import HSlider from "./hslider.vue";
+
 export default {
-  name: 'Home'
-}
+  name: 'home',
+  components: {
+    VHeader,
+    HSlider
+  }
+};
 </script>
 
 <style lang="scss" scoped>
